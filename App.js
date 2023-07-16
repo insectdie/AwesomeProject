@@ -1,112 +1,107 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, {Component} from 'react';
+import {Text, View, Image, TextInput, StyleSheet} from 'react-native';
+import MacBook from './MacBook.jpg';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+const App = () => {
+  return <StylingReactNativeComponent />;
+};
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+const StylingReactNativeComponent = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={{paddingTop: 70, paddingLeft: 20}}>
+      <Text style={styles.text}>Styling Component</Text>
+      <View
+        style={{
+          height: 100,
+          width: 100,
+          backgroundColor: 'grey',
+          borderWidth: 2,
+          borderColor: 'red',
+          marginTop: 20,
+          marginLeft: 20,
+        }}
+      />
+      <View
+        style={{
+          padding: 12,
+          backgroundColor: '#F2F2F2',
+          width: 212,
+          borderRadius: 8,
+        }}>
+        <Image
+          source={MacBook}
+          style={{
+            width: 188,
+            height: 107,
+            borderRadius: 8,
+          }}
+        />
+        <Text
+          style={{
+            fontSize: 14,
+            fontWeight: 'bold',
+            marginTop: 16,
+          }}>
+          New MacBook Pro 2019
+        </Text>
+        <Text style={{fontSize: 12, fontWeight: 'bold', color: '#F2994A', marginTop: 16}}>Rp. 25.000.000</Text>
+        <Text style={{fontSize:12, fontWeight: '300', marginTop: 12}}>Jakarta Barat</Text>
+        <View style={{backgroundColor: '#6FCF97',
+              paddingVertical: 6,
+              borderRadius: 25,
+              marginTop: 20
+            }}>
+          <Text style={{fontSize: 14, 
+              fontWeight: '600', 
+              color: 'white', 
+              textAlign: 'center'}}>BELI</Text>
+        </View>
+      </View>
+      
     </View>
   );
 };
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'blue',
+    marginLeft: 20,
+    marginTop: 20,
+  },
+});
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const SampleComponent = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Langkah Pertama">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits. Test 1 2 3
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <View style={{width: 80, height: 80, backgroundColor: '#0abde3'}}>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Andry />
+      <Text>Halomoan</Text>
+      <Text>Ompusunggu</Text>
+      <Photo />
+      <TextInput style={{borderWidth: 1}} />
+      <BoxGreen />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const Andry = () => {
+  return <Text>Andry</Text>;
+};
+
+const Photo = () => {
+  return <Image
+    source= {MacBook}
+    style={{width:100, height:100}} />;
+};
+
+class BoxGreen extends Component {
+  render() {
+    return <Text>Ini Class Component</Text>;
+  }
+}
 
 export default App;
