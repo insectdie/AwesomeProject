@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View, Image, TextInput, StyleSheet} from 'react-native';
-import MacBook from './MacBook.jpg';
+import MacBook from '../../assets/images/MacBook.jpg';
 
 const SampleComponent = () => {
   return (
