@@ -2,7 +2,33 @@ import React, {Component} from 'react';
 import {Text, View, Image} from 'react-native';
 
 class FlexBox extends Component {
+  constructor(props) {
+    super(props);
+    console.log('==> constructor');
+    this.state = {
+      follower: 200,
+    };
+  }
+
+  componentDidMount() {
+    console.log('==> component did Mount');
+    setTimeout(() => {
+      this.setState({
+        follower: 400,
+      });
+    }, 2000);
+  }
+
+  componentDidUpdate() {
+    console.log('==> component did update');
+  }
+
+  componentWillUnmount() {
+    console.log('==> component will unmount');
+  }
+
   render() {
+    console.log('==> render');
     return (
       <View>
         <View
@@ -39,7 +65,7 @@ class FlexBox extends Component {
             <Text style={{fontWeight: 'bold', fontSize: 16}}>
               Andry Ompusunggu
             </Text>
-            <Text>5.000.000 follower</Text>
+            <Text>{this.state.follower} follower</Text>
           </View>
         </View>
       </View>
