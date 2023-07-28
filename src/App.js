@@ -9,6 +9,7 @@ import StateDinamis from './pages/StateDinamis';
 import Communication from './pages/Communication';
 import ReactNativeSvg from './pages/ReactNativeSvg';
 import CallAPIVanilla from './pages/CallAPIVanilla';
+import CallAPIAxios from './pages/CallAPIAxios';
 
 const App = () => {
   // const [isShow, SetIsShow] = useState(true);
@@ -29,7 +30,8 @@ const App = () => {
         {/* <StateDinamis /> */}
         {/* <Communication /> */}
         {/* <ReactNativeSvg /> */}
-        <CallAPIVanilla />
+        {/* <CallAPIVanilla /> */}
+        <CallAPIAxios />
       </ScrollView>
     </View>
   );
